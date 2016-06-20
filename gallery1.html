@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Disappearing Heritage in Madrid">
+  <meta name="author" content="Sarah Garland Potts">
+<link rel="stylesheet" type="text/css" href="gallery/galleria.classic.css">
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <style>
+  /* GLOBAL STYLES
+  -------------------------------------------------- */
+  /* Padding below the footer and lighter body text */
+
+  body {
+    padding-bottom: 40px;
+    color:#BEBEBE;
+  }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1{
+      margin: 0;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 10px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 0 70px #ffffff;
+      /*color: #323232;*/
+      /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+      color:#323232;
+    }
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      font-weight:400;
+      /*color: #323232;*/
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 10px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 0 70px #ffffff;
+      /*text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff,0 0 50px #ffffff;*/
+      color:#161616;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+      font-family: 'Open Sans', Arial;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing:1px;
+      font-size:14px;
+      color:##FF6F36;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: 300;
+      text-align: left;
+    }
+    .marketing .span4 p {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 30px #313131;
+      -moz-box-shadow: 0 2px 30px #313131;
+      box-shadow: 0 2px 30px #313131;
+    }
+    .navbar-inverse .navbar-inner {
+      background-color:#313131;
+      background-image: -moz-linear-gradient(top,#222,#111);
+      background-image: -webkit-gradient(linear,0 0,0 100%,from(#222),to(#111));
+      background-image: -webkit-linear-gradient(top,#222,#111);
+      background-image: -o-linear-gradient(top,#222,#111);
+      background-image: linear-gradient(to bottom,#313131,#111);
+      background-repeat: repeat-x;
+      border-color: #313131;
+    }
+
+
+    /* Demo styles */
+    html,body{background:#1A1A1A;margin:0;}
+    body{border-top:4px solid #1A1A1A;}
+    .content{width:90%;margin:70px auto;}
+    p{margin:0 0 20px}
+    a {color:#22BCB9;text-decoration:none;}
+    .cred{margin-top:20px;font-size:11px;}
+
+    /* This rule is read by Galleria to define the gallery height: */
+    /*#galleria{height:320px}*/
+    #galleria{height:650px}
+
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="gallery/galleria.classic.css">
+    <!-- load jQuery -->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+    <!-- load Galleria -->
+    <script src="gallery/galleria-1.2.9.min.js"></script>
+
+  </head>
+  <body>
+   <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="home.html">Disappearing Heritage</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="map.html">Interactive Map</a></li>
+                       <li class="active"><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+                      <li ><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>  
+                  </ul>
+                </li>  
+                <li><a href="feature.html">The Story</a></li>
+                <li><a href="plazaespana.html">The Empty Plaza</a></li>              
+                <li><a href="#about">About</a></li>
+              
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+    <div class="content">
+      <h2 style="padding-top:8px;">Well Restored Buildings in Madrid</h2>
+      <p>These are a few examples of buildings that have been restored or repurposed, while preserving their historical and cultural value. </p>
+
+      <!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
+
+      <div id="galleria">
+        <div id="galleria">
+          <a href="http://www.dilectusmeus.com/wp-content/uploads/2012/12/La-Central-de-Callao-librer%C3%ADa-Madrid.png">
+            <img 
+            src="http://www.dilectusmeus.com/wp-content/uploads/2012/12/La-Central-de-Callao-librer%C3%ADa-Madrid.png",
+            data-big="http://www.dilectusmeus.com/wp-content/uploads/2012/12/La-Central-de-Callao-librer%C3%ADa-Madrid.png"
+            data-title="La Central"
+            data-description="La Central was restored to encorporate the historical and cultural value of the previous building.  It is protected under the second level (Estructural). <a href='http://www.dilectusmeus.com/www-dilectusmeus-com-blog-libro/un-libro-the-new-yok-times-36-hours-150-weekends-in-the-usa-canada-125-weekends-in-europe/attachment/la-central-de-callao-libreria-madrid/#!prettyPhoto' target='_blank'>Image Source</a>" 
+            >
+          </a>
+          <a href="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/3635_10151015889108286_1828366984_n.jpg">
+            <img 
+            src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/3635_10151015889108286_1828366984_n.jpg",
+            data-big="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-ash4/3635_10151015889108286_1828366984_n.jpg"
+            data-title="Matadero"
+            data-description="This building was previous the slaughter house of Madrid. It was changed to become a cultural center, and revitalized the neighborhood.  The project has been very successful. <a href='https://www.facebook.com/photo.php?fbid=10151015889108286&set=a.10151015881528286.443405.171496603285&type=3&theater' target='_blank'>Image Source</a>"
+            >
+          </a>
+
+           <a href="http://upload.wikimedia.org/wikipedia/commons/2/22/Biblioteca_Joaqu%C3%ADn_Leguina_(Madrid)_02.jpg">
+            <img 
+            src="http://upload.wikimedia.org/wikipedia/commons/2/22/Biblioteca_Joaqu%C3%ADn_Leguina_(Madrid)_02.jpg",
+            data-big="http://upload.wikimedia.org/wikipedia/commons/2/22/Biblioteca_Joaqu%C3%ADn_Leguina_(Madrid)_02.jpg"
+            data-title="Joaquín Leguina Library"
+            data-description="This building was build between 1912 and 1914 and was converted into a library by the Commuinity of Madrid in 1994. <a href='http://www.madrid.org/cs/Satellite?c=CM_InfPractica_FA&cid=1142604956159&pagename=ComunidadMadrid%2FEstructura' target='_blank'>Image Source</a>"
+            >
+          </a>
+
+          <a href="http://4.bp.blogspot.com/-MJI8N5TaDvw/Tp7aNofMhhI/AAAAAAAAAHQ/tNEwDqnldWk/s1600/biblioteca.jpg">
+            <img 
+            src="http://4.bp.blogspot.com/-MJI8N5TaDvw/Tp7aNofMhhI/AAAAAAAAAHQ/tNEwDqnldWk/s1600/biblioteca.jpg",
+            data-big="http://4.bp.blogspot.com/-MJI8N5TaDvw/Tp7aNofMhhI/AAAAAAAAAHQ/tNEwDqnldWk/s1600/biblioteca.jpg"
+            data-title="Escuelas Pías de San Fernando"
+            data-description="The ruins of this church were part of the convent and school and were build between 1734 and 1791. In 1936 almost the entire building was destroyed, only leaving the ruins. The planning dempartment of Madrid promoted the recovery of the building and converted it into a Public Library. This building was delared Bien de Interes Cultural in 1996 <a href='http://www.monumentamadrid.es/AM_Edificios4/AM_Edificios4_WEB/#ingra:inmana.07259' target='_blank'>Source</a>"
+            >
+          </a>
+
+           <a href="http://www.elpais.com/recorte/20101031elpepueco_3/XXLCO/Ies/Corrala_Lavapies.jpg">
+            <img 
+            src="http://www.elpais.com/recorte/20101031elpepueco_3/XXLCO/Ies/Corrala_Lavapies.jpg",
+            data-big="http://www.elpais.com/recorte/20101031elpepueco_3/XXLCO/Ies/Corrala_Lavapies.jpg"
+            data-title="Centro Cultural La Corrala"
+            data-description=" <a href='http://www.uam.es/ss/Satellite/es/1242657634005/contenidoFinal/Centro_Cultural_La_Corrala.htm' target='_blank'>Source</a>"
+            >
+          </a>
+          
+
+          
+
+        </div>
+
+        <p class="cred">Made by <a href="http://galleria.aino.se">Galleria</a>.</p>
+      </div>
+<footer class="footer1">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+      <script>
+
+    // Load the classic theme
+    Galleria.loadTheme('gallery/galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+
+    </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+    !function ($) {
+      $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+    }(window.jQuery)
+    </script>
+    <script src="../assets/js/holder/holder.js"></script>
+  </body>
+  </html>

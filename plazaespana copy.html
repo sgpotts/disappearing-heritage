@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Sarah Garland Potts">
+
+  <!-- Le styles -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+      /*color: #5a5a5a;*/
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 400px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      /* height: 100%;*/
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1{
+      margin: 0;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*color: #323232;*/
+      /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+      color:#323232;
+    }
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      font-weight:400;
+      /*color: #323232;*/
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff,0 0 50px #ffffff;*/
+      color:#161616;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+      font-family: 'Open Sans', Arial;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing:1px;
+      font-size:14px;
+      color:##FF6F36;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: 300;
+      text-align: left;
+    }
+    .marketing .span4 p {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        width: auto;
+        /* height: 500px;*/
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 60px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    /* This rule is read by Galleria to define the gallery height: */
+    /*#galleria{height:320px}*/
+    
+    #container{  width: 100%;  top: 0;  left: 0; z-index: -1;   } 
+    #info{
+      top:0; left:0;z-index: -1;
+
+    }
+    /*h1,h2,h3,h4,h5,body{
+      color:black;
+    }*/
+    </style>
+
+
+
+    <!-- load jQuery -->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+
+  </head>
+  <body>
+
+    <div id="container"> 
+
+      <video id="video" class="videolarge" width="100%" preload="auto" autoplay loop muted>   
+        <source src='plazaespana/backgroundvideo.mp4' type='video/mp4'>
+          This video is not supported.
+        </video>
+        <div id="info" style="color:#ffffff;"></div>
+        <script type="text/javascript">
+        var video = document.getElementById('video'),
+        info = document.getElementById('info'),
+        fraction = 0.9;
+
+        function checkScroll() {
+          var x = video.offsetLeft,
+          y = video.offsetTop,
+          w = video.offsetWidth,
+          h = video.offsetHeight,
+      r = x + w, //right
+      b = y + h, //bottom
+      visibleX,
+      visibleY,
+      visible;
+
+      if (window.pageXOffset >= r ||
+        window.pageYOffset >= b ||
+        window.pageXOffset + window.innerWidth < x ||
+        window.pageYOffset + window.innerHeight < y
+        ) {    
+
+        info.innerHTML = '0%';
+      return;
+    }
+
+    visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
+    visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
+
+    visible = visibleX * visibleY / (w * h);
+
+    info.innerHTML = Math.round(visible * 100) + '%';
+
+    if (visible > fraction) {
+      video.play();
+    } else {
+      video.pause();
+    }
+
+  }
+
+  checkScroll();
+  window.addEventListener('scroll', checkScroll, false);
+  window.addEventListener('resize', checkScroll, false);
+  </script>
+</div>
+<!-- NAVBAR
+  ================================================== -->
+  <div class="navbar-wrapper"><!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner"><!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. --> <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="brand" href="home.html">Disappearing Heritage</a> <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="home.html">Home</a></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="map.html">Interactive Map</a></li>
+                  <li><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+                  <li><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+                  <li><a href="timeline.html">Timeline</a></li>
+                </ul>
+              </li>
+              <li><a href="feature.html">The Story</a></li>
+              <li class="active"><a href="plazaespana.html">The Empty Plaza</a></li>
+              <li><a href="#about">About</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+            <div class="container-fluid">
+              <div class="row-fluid">
+               <div class="span8 offset2">
+                <div class="page-header">
+                 <h2 style="font-size:40px; padding-bottom:10px;">An empty plaza with no plan</h2>
+               </div>
+             </div>
+             <div class="span7 offset2">
+              <p class="text-info">
+                <em>"The time was during Franco. Spain was living in a situation of international isolation because the Western powers had turned their backs since Spain had supported Italy and Germany in the Second World War. But Franco started international tourism, and it was with President Eisenhower where he started the process of opening in the 1950’s. When Eisenhower visited in December of 1959, the Madrid Tower was not yet finished, but they were able to light up ‘IKE’ in the windows as a welcome to the president".</em></p></div>
+                <br>
+                <div class="span9 offset1">
+                 <br>
+                 <img src="http://www.secretosdemadrid.es/wp-content/uploads/2012/12/Torre-Madrid.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="Ike in Madrid" style="height:300px;">
+                 <br>
+                 <div><blockquote>
+                  <p>"In the Gran Via, they projected two large skyscrapers that for a long period were the highest buildings in Spain, one built between the late 40s and early 50s, and the other between late 50s and early 60s."</p>
+
+                </blockquote></div>
+
+              </div>
+
+
+              <br>
+              <div class="span7 offset2">
+
+                <p>
+                  Óscar da Rocha Aranda, a historian and author, has told these descriptions many times before. He is part of a new organization in Madrid called <a href="http://www.ahoraarquitectura.es/" target="_blank">Ahora Arquitectura</a>, formed by a group of architects and historians, whose main objective is “the promotion and dissemination of Architecture, Urbanism and Art, as well as the defense and preservation of Architectural Heritage, Urban and Artistic”. Óscar leads architectural tours around the city, focusing on specific areas, neighborhoods, or types of architecture.
+                </p> <br/>
+                <p>
+                 Today, the focus is on Plaza de España. After a pause, Óscar continues with the story of the Madrid Tower, the tallest building there, and one of the most prominent buildings in Madrid. The tower, until 1967, was the tallest concrete building in Europe, with a height of 465 feet high in the corner of the Plaza de España.
+               </p><br />
+               <p class="text-info">
+                <em>"In the Gran Via, they projected two large skyscrapers that for a long period were the highest buildings in Spain, one built between the late 40s and early 50s, and the other between late 50s and early 60s.</em>
+              </p><br/>
+              <p class="text-info">
+                <em>This skyscraper is built entirely of reinforced concrete, which for that time was a waste of material, something very complicated because Spain was enduring a period of famine. Next to it, Edificio España maintains a decorative reminiscence of Spanish Baroque influence. The other, the Madrid Tower, eliminates these elements and is a more of a modern skyscraper. You have no decorative elements, combines not brick with stone, is cleaner and purer, closer to modernity. For a time it was the reinforced concrete skyscraper highest in Europe, because in Europe at that time many were already using the metal structure typical of skyscrapers. This was used for a symbol of the Franco era in Spain, although isolated from the other powers, it still had economic potential to do things like this".</em>
+              </p><br />
+              <p>
+                He continues with the tour, speaking about each building and its significance.
+              </p><br />
+              <img src="plazaespana/images/group.jpg" style="display: block; margin-left: auto; margin-right: auto;" alt="Ahora Arquitectura group tour" style="height:300px;">
+              <br/>
+              <p>
+                For tourists and citizens visiting the Plaza de España today, one can only see a few windows lit at the top at night, the only part of the building still occupied. What was once filled with airline offices and other businesses, the lower level of the building is now empty. Situated in the center of the city in a prominent location at the western end of the Gran Vía, one can find Plaza de España, after Puerta del Sol and Plaza Mayor, just off Plaza de Oriente and its Royal Palace, one of the most emblematic palaces in the capital of Spain. However, from the four buildings that are listed at the two highest levels of protection by the city government, three are currently partially or completely empty. The fourth building is privately owned, currently filled and well restored.
+              </p><br />
+              <p>
+                “This used to be a very important and symbolic square, at the center of the square we can find the monument dedicated to Cervantes, the author of Don Quijote. but it is true that right now this square is suffering a process of abandoning. in the past until 10 years ago this square was definitely more alive,” said Emanuele Pierobon, urban planner and professor in the Department of Urbanism at the Universidad Europea de Madrid.
+              </p><br />
+              <p>
+                The eighth tallest building in madrid with 25 floors, the Edificio España, built in 1953, “has a staggered silhouette of four heights, and enjoys considerable protection from the City Council itself”, described by the City Hall’s tourism website. “Today it is empty and under restoration to be converted into luxury houses. Only the façade and the hall will be kept intact, since the rest of the structural elements have been modified,” they say.
+              </p></p> 
+</div>
+<div class="span9 offset1">
+ <br>
+ <blockquote>
+  <p>“This used to be a very important and symbolic square, at the center of the square we can find the monument dedicated to Cervantes, the author of Don Quijote. but it is true that right now this square is suffering a process of abandoning.”</p>
+  <small>Emanuele Pierobon</small>
+</blockquote>
+
+</div>
+<div class="span7 offset2"> 
+              <p>
+                Another of the protected buildings, the Consejería de Cultura, also known as the Real Compañía Asturiana de Minas, built in 1895, sits in the corner of the Plaza. It has the highest level of protection in the square and is on the list of Bien de Interes Culturales in Madrid. The list of Bien de Interes Culturales is protected under a countrywide law enacted in 1985 that establishes standards and protections for those monuments listed. The monuments are under the jurisdiction of each community. The building “suffered various alterations” in 1997 and was abandoned for some time until the government of Madrid took over, according to the City Hall. During its last inspection on November 30, 2012, the building was listed as “unfavorable” because of the general state of the structure and foundation, the general state of the facade, exterior and walls, and the state of the elements of existing access. In 2001, the inspection was listed as “favorable.”
+              </p><br />
+              <p>
+                Mr. Pierobon says the intention was not to abandon the square; with the Edificio España, “The intention was to make a huge work of restoration of the whole building. The owners wanted to maintain part of the building as a hotel and part to reconvert into luxury flats. Basically the economical crisis started in 2008 and due to that fact, all these plans went wrong.”
+              </p><br />
+              <p>
+                The previous Mayor of Madrid, Alberto Ruiz-Gallardón, proposed a project in 2005 that had “prestigious architects and planners worldwide” participate and give proposals for a remodeling of part of the city. The project would include “ burying six kilometers from the M-30 and the recovery of 500,000 m2 of green areas” and would also “take advantage of the river for recreational and sporting purposes, create pedestrian and bicycle paths, optimize the Matadero facilities and Fruit Market, and introduced inside public transportation to connect the area with other significant areas.”
+              </p><br />
+              <p>
+                However, this June El País <a href="http://ccaa.elpais.com/ccaa/2013/06/18/madrid/1371549414_642762.html">reported</a> that this plan had been postponed by the new mayor, and would not be carried out. With the plan on hold, there are not many options for rehabilitating the square.
+              </p><br />
+              <p>
+                In June 2013 during a discussion on the state of the city of Madrid, the Mayor, Ana Maria Botella Serrano said, “Planning should be an ally against the crisis. The planning can encourage us to be a city of opportunity... we are providing a series of investment projects that will enhance our city.” The plan for Plaza de España is an installation of a new hotel currently where the unprotected, empty buildings are located. “In these actions in which we work together with the private sector, it brings together other municipal character.”
+              </p><br />
+              <p>
+                Pablo Rivera, architect and founding partner of Ahora Arquitectura, thinks that this is not a unique situation. “Its a bigger problem. we can talk about the Canalejas operation, things are starting to move ahead with that operation but at the price of destroying almost everything.”
+              </p><br />
+              <p>
+                Referring to the status of the square he says, “It’s difficult that it gets worse. It’s becoming almost a safety problem.The Plaza is a prominent square but it has a difficult location, its a problem for the buildings, some are half buried in a tunnel.”
+              </p><br />
+             <!--  <table class="table table-hover" align="center" style="margin: 0px auto;">
+                <h1 style="margin-left:50px;"><small style="font-size:16px;">Summary of  projects and activities undertaken 2004 - 2007</small></h1>
+                <thead>
+                 <tr style="font-family:'Open Sans', Helvetica, Arial; font-size:11px; font-weight:300; letter-spacing:1px;">
+                  <th>Year</th>
+                  <th>Nmbr of Projects</th>
+                  <th>Nmbr of Actions</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align:center;">2004</td>
+                  <td style="text-align:center;">17</td>
+                  <td style="text-align:center;"></td>
+
+                </tr>
+                <td style="text-align:center;">2005</td>
+                <td style="text-align:center;">34</td>
+                <td style="text-align:center;">240</td>
+
+              </tbody>
+            </table> -->
+            <p>
+              From a city planning point of view, Mr. Pierobon believes there could be an explanation for what has happened, using the plaza “ as an example of a process that is taking place all over Spain, we have to take note of this fact that all these businesses which used to occupy the center of the city are now displaced towards the outskirts of the city. That’s why these buildings are remaining empty.”
+            </p><br />
+            <p>Unfortunately for now, all plans to refurbish the square are at a halt for the near future.</p><br />
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+     
+  
+
+<hr class="featurette-divider" style="margin:50px 0">
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h2>Photo Gallery of Plaza de España</h2>
+      <div id="myCarousel" class="carousel slide" style="padding-bottom:0px; margin-bottom:0px;">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+          <li data-target="#myCarousel" data-slide-to="7"></li>
+          <li data-target="#myCarousel" data-slide-to="8"></li>
+          <li data-target="#myCarousel" data-slide-to="9"></li>
+          <li data-target="#myCarousel" data-slide-to="10"></li>
+          <li data-target="#myCarousel" data-slide-to="11"></li>
+          <li data-target="#myCarousel" data-slide-to="12"></li>
+          <li data-target="#myCarousel" data-slide-to="13"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+         <div class="active item" data-slide-number="0"><img src="plazaespana/images/IMG_6083.jpg" /></div>
+         <div class="item" data-slide-number="1"><img src="plazaespana/images/IMG_6094.jpg" /></div>
+         <div class="item" data-slide-number="2"><img src="plazaespana/images/IMG_6095.jpg" /></div>
+         <div class="item" data-slide-number="3"><img src="plazaespana/images/IMG_6096.jpg" /></div>
+         <div class="item" data-slide-number="4"><img src="plazaespana/images/IMG_6103.jpg" /></div>
+         <div class="item" data-slide-number="5"><img src="plazaespana/images/IMG_6108.jpg" /></div>
+         <div class="item" data-slide-number="6"><img src="plazaespana/images/IMG_6111.jpg" /></div>
+         <div class="item" data-slide-number="7"><img src="plazaespana/images/IMG_6114.jpg" /></div>
+         <div class="item" data-slide-number="8"><img src="plazaespana/images/IMG_6117.jpg" /></div>
+         <div class="item" data-slide-number="9"><img src="plazaespana/images/IMG_6121.jpg" /></div>
+         <div class="item" data-slide-number="10"><img src="plazaespana/images/IMG_6130.jpg" /></div>
+         <div class="item" data-slide-number="11"><img src="plazaespana/images/IMG_6143.jpg" /></div>
+         <div class="item" data-slide-number="12"><img src="plazaespana/images/IMG_6146.jpg" /></div>
+         <div class="item" data-slide-number="13"><img src="plazaespana/images/IMG_6158.jpg" /></div>
+       </div>
+       <!-- Carousel nav -->
+       <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+       <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+     </div>
+   </div>
+ </div>
+ <script type="text/javascript">
+ $('.carousel').carousel()
+ </script>
+ <p class="text-right" style="font-size:11px;">Photos by Sarah Garland Potts</p><h5 style="font-weight:normal;">Click the arrows to see the current state of the buildings in Plaza de España in the center of Madrid.</h5>
+ <hr class="featurette-divider">
+
+ <footer class="footer1">
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap-transition.js"></script>
+<script src="../assets/js/bootstrap-alert.js"></script>
+<script src="../assets/js/bootstrap-modal.js"></script>
+<script src="../assets/js/bootstrap-dropdown.js"></script>
+<script src="../assets/js/bootstrap-scrollspy.js"></script>
+<script src="../assets/js/bootstrap-tab.js"></script>
+<script src="../assets/js/bootstrap-tooltip.js"></script>
+<script src="../assets/js/bootstrap-popover.js"></script>
+<script src="../assets/js/bootstrap-button.js"></script>
+<script src="../assets/js/bootstrap-collapse.js"></script>
+<script src="../assets/js/bootstrap-carousel.js"></script>
+<script src="../assets/js/bootstrap-typeahead.js"></script>
+<script>
+!function ($) {
+  $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+}(window.jQuery)
+</script>
+<script src="../assets/js/holder/holder.js"></script>
+</body>
+</html>

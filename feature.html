@@ -1,0 +1,625 @@
+
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Sarah Garland Potts">
+
+  <!-- Le styles -->
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 400px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 400px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1{
+      margin: 0;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*color: #323232;*/
+      /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+      color:#323232;
+    }
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      font-weight:400;
+      /*color: #323232;*/
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff,0 0 50px #ffffff;*/
+      color:#161616;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+      font-family: 'Open Sans', Arial;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing:1px;
+      font-size:14px;
+      color:##FF6F36;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: 300;
+      text-align: left;
+    }
+    .marketing .span4 p {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 60px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+      <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    </head>
+
+    <body>
+
+
+
+      <div class="navbar-wrapper"><!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+        <div class="container">
+          <div class="navbar navbar-inverse">
+            <div class="navbar-inner"><!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. --> <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="brand" href="home.html">Disappearing Heritage</a> <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li><a href="home.html">Home</a></li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="map.html">Interactive Map</a></li>
+                      <li><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+                      <li><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+                      <li><a href="timeline.html">Timeline</a></li>
+                    </ul>
+                  </li>
+                  <li class="active"><a href="feature.html">The Story</a></li>
+                  <li><a href="plazaespana.html">The Empty Plaza</a></li>
+                  <li><a href="#about">About</a></li>
+                 
+                  <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns --></ul>
+                </div>
+                <!--/.nav-collapse --></div>
+                <!-- /.navbar-inner --></div>
+                <!-- /.navbar --></div>
+                <!-- /.container --></div>
+                <!-- /.navbar-wrapper -->
+
+              </div> <!-- /.container -->
+            </div><!-- /.navbar-wrapper -->
+            <div id="myCarousel" class="carousel slide" style="margin-bottom:0;">
+              <div class="carousel-inner" style="margin-bottom:0;">
+                <div class="item active">
+                 <img src="img/feature.jpg" style="opacity:0.6;" alt="">
+                 <div class="container">
+                  <div class="carousel-caption" style="max-width:850px;">
+                    <h1 contenteditable="true" style="padding-top:70px; font-size:70px; font-weight:400">Disappearing History</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+
+
+            <div class="row-fluid">
+             <div class="span8 offset2">
+
+              <div class="page-header">
+               <h1><small>Protecting Madrid's Historical and Cultural Heritage</small></h1>
+             </div>
+           </div>
+           <div class="span7 offset2">
+            <p>
+              
+
+                <span>The city of Madrid has 226 monuments under the highest level of official protection for its historical and architectural value, according to a document by the Community of Madrid's Government. In addition to that number, there are over 9,000 protected buildings in the capital, according to the "Catálogo de Edificios Protegidos" (protected buildings index) from the City Hall of Madrid. With so much historical and cultural heritage in the city, and the crisis causing spending cuts, the citizens of Madrid and its many tourists are losing valuable buildings, abandoned for years and on the verge of ruin.</span>
+              </p> 
+              <p>
+                <span>It is no clear how much of the situation can be blamed on the current economic crisis or on decades of inaction. The City Hall of Madrid began in 2004 a “period of firm commitment to the revitalization of downtown” and created the the Office of the Center as a “focal point and strategic planning.” But as of a 2010</span> <a href="http://www.madrid.es/UnidadesDescentralizadas/UDCObservEconomico/BarometroEconomia/2010/Ficheros/Enero/2.%20Equilibrio%20territorial.pdf" target="_blank"><span>report</span></a><span>, (two year after the crisis started) the City Hall said that “the level of compliance of the actions planned and executed is estimated at 60%.”</span>
+              </p> 
+              
+            </div>
+            <div class="span9 offset1">
+              <br>
+              <blockquote>
+                <p>There are over 9,000 protected buildings in the capital, according to the Catálogo de Edificios Protegidos from the City Hall of Madrid</p>
+                
+              </blockquote>
+              <br>
+            </div>
+            <div class="span7 offset2">
+              <p>
+                <span>Buildings at the highest level of protection have gone unchanged and unprotected. For example, in the 2006 Plan of Action from the Office of the Center, three different projects, Programas de Equipamientos, dealt with building new facilities, using existing buildings, 13 of which are protected.  
+                </span>
+              </p> 
+              <p>
+                <span>Listed in this plan was a project for the Palace of the Duchess of Sweden (El Palacio de la Duquesa de Sueca). Built in the 18th century as a school for children of the servants to the king Carlos III, in the 19th century the building became a residence for the Duchess of Sweden, the wife of Manuel Godoy, Prime Minister of Charles IV. In 2005 the Governing Board approved the endowment for Public Administration, according to the City Hall. The city planned to adapt the building into housing for youth as part of an “Urban Action Plan” to revitalize the center. The plan never came through and now the building is on the verge of collapsing and has made recent headlines because of its state. Repeatedly reached for comment, the City Hall did not respond.
+
+                </span>
+                <p>
+                  <a href="http://www-2.munimadrid.es/urbanismo_inter/visualizador/" target="_blank">Check the interactive map from the City Hall</a>
+               </p>
+             </p> 
+             <p>
+              <span>In total, of the buildings in the three projects, apart from the Palace of the Duquesa de Sueca, one from seventeenth century has been torn down, and two other buildings were described as unusable in 2013, all in the street Embajadores (numbers 16, 18 and 46). Others, not included in the plans but also in the index for the maximum level of protection, are extremely deteriorated. 
+              </span>
+            </p> 
+            <p>
+              <span>In the neighborhood of Malasaña, situated at Calle Corredera Baja de San Pablo, 20, sits a building from the 17th century, according to Colegio Oficial de Arquitectos de Madrid (Official College of Architects of Madrid). The building has been used a residence and now is completely abandoned, littered with graffiti.  This building is owned by the government and is listed at the highest tier of protection (Integral). The government granted in 2007 the restructuring work, and again in 2009. The City Council planned to build a community center for the north district of the city center in the structure, according to the Plan de Acción 2005 de la Oficina del Centro. 
+              </span>
+            </p>
+          </div>
+          <div class="span9 offset1">
+           <br>
+           <blockquote>
+            <p>Another building from the seventeenth century, located at Calle Embajadores 46, was described in an inspection from 2013 being unfavorable because of the general state of the structure and foundation, general state of conservation of roofs, general state of plumbing and sanitation, and the state of the elements of existing access.</p>
+          </blockquote>
+          <br>
+        </div>
+        <div class="span7 offset2"> 
+
+          <p>
+
+            <span>The Frontón Beti Jai is possibly one of the most significant examples of the situation. The building was opened in 1894 to host sports competitions, with the capacity to fit 4,000 people and has an estimated lot size of 3609.36 m², according to the Community of Madrid.  The building has been vacant since 1989 and the government has not stated specifically their plans, only that any work would have to be approved 
+              by the government.  In January of 2011 the Community of Madrid elevated the protection level to the State’s jurisdiction, with the goal of protecting the landmark to try and slow down the deterioration of the building. An inspection in 2013 said the conditions were “unfavorable” because of the general state of the structure and foundation, general state of fronts and walls, general state of conservation of roofs, general state of plumbing and sanitation, and the state of the elements of existing access.  
+            </span>
+          </p> 
+
+
+          <a href="gallery2.html" target="_blank">See more examples and information about these buildings here: Photo Gallery</a>
+        </p>
+        <br>
+        <table class="table table-hover" align="center" style="margin: 0px auto; border-top:1px solid gray; border-bottom:1px solid gray;">
+          <h1 style="margin-left:50px;"><small style="font-size:16px;">Summary of  projects and activities undertaken 2004 - 2007</small></h1>
+
+          <thead>
+           <tr style="font-family:'Open Sans', Helvetica, Arial; font-size:11px; font-weight:300; letter-spacing:1px;">
+            <th>Year</th>
+            <th>Nmbr of Projects</th>
+            <th>Nmbr of Actions</th>
+            <th>Degree of Implementation</th>
+            <th>Executed Investment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center;">2004</td>
+            <td style="text-align:center;">17</td>
+            <td style="text-align:center;"></td>
+            <td style="text-align:center;"></td>
+            <td style="text-align:center;">104,189,425 €</td>
+          </tr>
+          <td style="text-align:center;">2005</td>
+          <td style="text-align:center;">34</td>
+          <td style="text-align:center;">240</td>
+          <td style="text-align:center;">60%</td>
+          <td style="text-align:center;">188,986,939 €</td>
+        </tr>
+        <td style="text-align:center;">2006</td>
+        <td style="text-align:center;">52</td>
+        <td style="text-align:center;"></td>
+        <td style="text-align:center;"></td>
+        <td style="text-align:center;">237,319,435 €</td>
+      </tr>
+
+      <td style="text-align:center;">2007</td>
+      <td style="text-align:center;">118</td>
+      <td style="text-align:center;">254</td>
+      <td style="text-align:center;"></td>
+      <td style="text-align:center;">276,500,775 €</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<p>
+  <h1><small>Who is in charge?</small></h1>
+  <p></p>
+</p> 
+<p>
+  <span>The main law that dictates all communities in Spain how to maintain the heritage is the</span> <a href="http://www.mcu.es/patrimonio/docs/ley16-1985.pdf" target="_blank"><span>Ley de Patrimonio Historico in 1985</span></a><span>, and has been in effect, without changes since that date.</span>
+</p> 
+<p>
+  <span>“At the heart of Patrimonio Histórico Español (Spanish Historical Heritage), and in order to provide greater protection and enforcement, a singular value will be applied to the category of Cultural Interest, which extends to the personal property of the heritage which, more glaring, require such protection… The Act also provides the formulas needed to make that assessment possible, as the defense of the historical heritage of a town should not be conducted exclusively through rules thatwould prohibit certain actions or limit certain uses, but from provisions that encourage conservation and, consequently, allow their enjoyment and facilitate its enhancement.”
+  </span>
+</p> 
+<p>
+  <span>This law established a category of “Bien de Interés Cultural” or Heritage of Cultural Interest, also referred to as BIC.  The Instituto del Patrimonio Cultural de España (the Institute of Cultural Heritage of Spain) is the government body responsible for the preservation of Spanish heritage.  Their responsibilities include “development and implementation of plans for the conservation and restoration of cultural heritage, the study of methods and techniques for restoration and conservation, storage, processing and dissemination of technical documentation available on heritage and referred to projects, interventions and work in each case,” etc. 
+  </span>
+</p> 
+</div>
+<div class="span9 offset1">
+ <br>
+ <blockquote>
+  <p>“The Institute is the most important body, but they cannot be everywhere… They are improving our heritage and our studies and conservation but it’s true that our heritage is so big that there is not enough for our heritage we need more.”</p>
+  <small>Elsa Soria Hernanz</small>
+</blockquote>
+<br>
+</div>
+<div class="span7 offset2"> 
+
+
+  <p>
+    <span>Elsa Soria Hernanz, Professor at the School of Conservation and Restoration of Bienes Culturales in Madrid and previous director of the department of conservation and restoration of bienes culturales at Artchemist, a company dedicated to heritage and architecture, says the institute is a great organization that promotes the cultural heritage in Spain.  “The Institute is the most important body, but they cannot be everywhere… They are improving our heritage and our studies and conservation but it’s true that our heritage is so big that there is not enough for our heritage we need more.”
+    </span>
+  </p> 
+  <p>The Community of Madrid and the City Hall also have their own laws that define protections for all other levels, below the BIC level.  There are three main levels, each with 2 sub levels.  The majority of the buildings in the city center are protected under at least some level of these protections.
+  </span>
+</p>
+<br>
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" style="font-family:'Open Sans', helvetica, arial;">
+        <strong>Spainish Government Protection</strong> - the Institute of Cultural Heritage
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        According to their <a href="http://www.mcu.es/patrimonio/CE/InfGenral/GestionMinisterio/Instituto.html" target="_blank">website</a>, The Institute of Cultural Heritage of Spain "was created in 1985 due to two reasons: the accession of Spain to other countries through treaties, conventions and other administrative mechanisms for Cultural Heritage and the need to unite in one State Center all organizations that worked to date." According to the law created in 1985, the creation of this body should, "guarantee a unit of basic criteria in the field of conservation and restoration of cultural property." They maintain the database of the locations that have been declared of Cultural Interest. The property belonging to the institute, are governed by specific rules detailed primarily in the Ley de Patrimonio of June 25 16/1985. The full database of all listed buildings in Spain can be found <a href="http://www.mcu.es/bienes/cargarFiltroBienesInmuebles.do?layout=bienesInmuebles&cache=init&language=es" target="_blank">here</a>. 
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" style="font-family:'Open Sans', helvetica, arial;">
+        <strong>Commuity Government Protection</strong> - Historical Heritage of the Community of Madrid
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+       <p>The Historical Heritage of the Community of Madrid encompasses "all cultural property, regardless of ownership, except for state-owned property located in the Community of Madrid." They must be in accordance with the heritage law of 1985.  The list of all protected bulidings by this government body can be found <a href="http://www.madrid.org/cs/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadervalue1=filename%3DInmuebles+INVENTARIO.pdf.pdf&blobkey=id&blobtable=MungoBlobs&blobwhere=1310965485608&ssbinary=true" target="_blank"> here</a>.</p>  
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree" style="font-family:'Open Sans', helvetica, arial;">
+       <strong>Local Government Protection</strong> - City Hall (Ayuntamiento)
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner" style="position:relative;">
+          <p>The City of Madrid also has their own regulations for all other buildings that need protection.  They must also be in accordance with the law of 1985, but they detail other levels of protections. The discription of their regulations can be found <a href="http://www.madrid.es/UnidadWeb/UGNormativas/Normativa/2011/ProtocoloPatrimonio.pdf" target="_blank">here</a></p>  <ul><p style="font-family:'Open Sans', Helvetica, Arial; font-weight:600; text-trasnform:uppercase;">Three Levels of Protection</p>
+      <li>LEVEL 1: Grade Singular and Grade Integral - They have the consideration of obligatory restoration on all surfaces.</li>
+       <li>LEVEL 2: Grade Estructural and Grade Volumétrico - Estructural only have certain determined elements for obligatory restoration; Volumétrico have the "enclosure" protected.</li>
+       <li>LEVEL 3: Grade Parical and Grade Ambiental - These only are protected with specific listed elements of the property.</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>
+  <br>
+ <h1><small>What is being done?</small></h1>  
+<p></p>
+</p> 
+<p>
+  <span>This year, the Community of Madrid passed a new law for the protection of Patrimonio Historico.  A press release from the Community of Madrid states, “the Governing Council approved the Heritage Act draft, in order to improve regional heritage protection, giving it value and making it compatible with the development of economic activity. Besides updating the regulations, dating back 15 years, it eliminates red tape and duplication, and clarifies the rules.”
+  </span>
+</p> 
+<p>
+  <span>However, this law has been very controversial and many specialists are not happy with the changes.</span>
+</p>
+<p>
+  <span>A press release from the Department of Archaeology of the College of Doctors and Graduates in Arts and Science in Madrid says that this bill is “a clear setback”, saying that it ”usurps urbanism to municipalities”, “encourages speculative interests”, and it “deregulates preventative archeological activity”.</span>
+</p> 
+<p>
+  <span>Madrid Ciudanía y Patrimonio created a petition on change.org against the new law called, “NO PAST: Sign unprotected against Madrid's historic heritage.”</span>
+</p> 
+<p>
+  <span>“The proposed Heritage Act…is a step backwards in safeguarding a set of goods of various kinds that make up the memory of a country or a community that we need to protect and conserve for posterity. This project ignores the demands of thousands of citizens and experts and the recommendations from the Council of Europe and from UNESCO made to preserve this important legacy,” the petition states.</span>
+</p>
+<p>
+  <span>Mrs. Soria agrees that this new law could be a problem. “I think that the effect of the law will make things worse. In Madrid they don’t know that our heritage is so important. They are changing things now for the present but not for the future.” One problem, she says, could be that Madrid does not “market” it’s heritage well, and many people are simply not aware of what is here. A new group formed this year called Ahora Architecture aims to change that, offering architectural tours around the city. “The goal is to show the city to make people aware of the architecture of the city so they can appreciate it,” says founding partner, Pablo Rivera.</span>
+</p> 
+<p>
+  <span>Emanuele Pierobon, urban planner and professor in the Department of Urbanism at the Universidad Europea de Madrid, gives another perspective of the situation. “I would like to believe that the public sector should always look after the care of the monuments because its public, but its true that public sector doesn’t in a very current way. You have historical buildings falling apart in the very center of the city; at the same time the city is promoting new development that usually takes place in the outskirts, which is not very sustainable.” An example of this is the Eurovegas project, which will generate an investment of 18,000 million euros, and create thousands of jobs according to the</span> <a href="http://www.madrid.org/cs/Satellite?c=CM_Actualidad_FA&amp;cid=1354190382450&amp;language=es&amp;pagename=ComunidadMadrid%2FEstructura" target="_blank"><span>Comunidad de Madrid</span></a><span>.</span>
+</p>
+
+<p>
+  <span>Emanuele believes that Madrid should be focusing on what is already in the city, before building new structures outside. “We should concentrate our efforts in the cultural recycling of buildings, architecture, etc. We should go back to the city and any time we have the chance, we need to take advantage of what is already built.”</span>
+</p> 
+<p>
+  <span>As of now, the government has not released any new plans for the vacant buildings scattered around the city.</span>
+</p>
+<br>
+<hr class="featurette-divider" style="margin-top:0; margin-bottom:0;">
+<ul class="thumbnails">
+  <li class="span7 offset2" style="text-align:center;">
+    <br>
+    <h1><small>Visit the photo gallery</small></h1>
+    <p></p>
+    <a href="gallery2.html" class="thumbnail">
+      <img data-src="img/feature.jpg" alt="" src="img/feature.jpg">
+    </a>
+    <p></p>
+    <p>See photos of the buildings mentioned here and other examples of buildings in trouble around the city of Madrid.</p>
+  </li>
+</ul>
+<hr class="featurette-divider" style="margin-top:0; margin-bottom:0;">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- FOOTER -->
+<footer class="footer1">
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+</div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+    !function ($) {
+      $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+          interval: false;
+        })
+    }(window.jQuery)
+    </script>
+    <script src="../assets/js/holder/holder.js"></script>
+  </body>
+  </html>

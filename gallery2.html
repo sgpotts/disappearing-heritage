@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Disappearing Heritage in Madrid">
+  <meta name="author" content="Sarah Garland Potts">
+<link rel="stylesheet" type="text/css" href="gallery/galleria.classic.css">
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <style>
+  /* GLOBAL STYLES
+  -------------------------------------------------- */
+  /* Padding below the footer and lighter body text */
+
+  body {
+    padding-bottom: 40px;
+    color:#BEBEBE;
+  }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1{
+      margin: 0;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 10px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 0 70px #ffffff;
+      /*color: #323232;*/
+      /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+      color:#323232;
+    }
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      font-weight:400;
+      /*color: #323232;*/
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 10px #ffffff, 0 0 50px #ffffff, 0 0 70px #ffffff, 0 0 70px #ffffff;
+      /*text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff,0 0 50px #ffffff;*/
+      color:#161616;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+      font-family: 'Open Sans', Arial;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing:1px;
+      font-size:14px;
+      color:##FF6F36;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: 300;
+      text-align: left;
+    }
+    .marketing .span4 p {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 30px #313131;
+      -moz-box-shadow: 0 2px 30px #313131;
+      box-shadow: 0 2px 30px #313131;
+    }
+    .navbar-inverse .navbar-inner {
+      background-color:#313131;
+      background-image: -moz-linear-gradient(top,#222,#111);
+      background-image: -webkit-gradient(linear,0 0,0 100%,from(#222),to(#111));
+      background-image: -webkit-linear-gradient(top,#222,#111);
+      background-image: -o-linear-gradient(top,#222,#111);
+      background-image: linear-gradient(to bottom,#313131,#111);
+      background-repeat: repeat-x;
+      border-color: #313131;
+    }
+
+
+    /* Demo styles */
+    html,body{background:#1A1A1A;margin:0;}
+    body{border-top:4px solid #1A1A1A;}
+    /*.content{width:90%;margin:70px auto;}*/
+    p{margin:0 0 20px}
+    a {color:#22BCB9;text-decoration:none;}
+    .cred{margin-top:20px;font-size:11px;}
+
+    /* This rule is read by Galleria to define the gallery height: */
+    /*#galleria{height:320px}*/
+    #galleria{height:650px}
+
+.galleria-info {
+  width:100%
+  left:0;
+}
+
+
+    </style>
+    
+    <!-- load jQuery -->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+    <!-- load Galleria -->
+    <script src="gallery/galleria-1.2.9.min.js"></script>
+
+  </head>
+  <body>
+ <!-- NAVBAR
+    ================================================== -->
+<div class="navbar-wrapper"><!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+<div class="container">
+<div class="navbar navbar-inverse">
+<div class="navbar-inner"><!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. --> <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="brand" href="home.html">Disappearing Heritage</a> <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li><a href="home.html">Home</a></li>
+<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="map.html">Interactive Map</a></li>
+<li><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+<li  class="active"><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+<li><a href="timeline.html">Timeline</a></li>
+</ul>
+</li>
+<li><a href="feature.html">The Story</a></li>
+<li><a href="plazaespana.html">The Empty Plaza</a></li>
+<li><a href="#about">About</a></li>
+<!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns --></ul>
+</div>
+<!--/.nav-collapse --></div>
+<!-- /.navbar-inner --></div>
+<!-- /.navbar --></div>
+<!-- /.container --></div>
+<!-- /.navbar-wrapper -->
+
+
+<div class="container">
+  <div class="content">
+   <h2 style="padding-top:70px;">Buildings in danger</h2>
+   <p>These are a examples of buildings that are protected at some level and are in danger of being destroyed. Click the info button to learn more.</p>
+   <p></p>
+
+   <!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
+
+   <div id="galleria">
+    <div id="galleria">
+      <a href="http://www.madridhistorico.com/imagenes/zoom_muy_grande/casapalacioduquesasueca.jpg">
+        <img 
+        src="http://www.madridhistorico.com/imagenes/zoom_muy_grande/casapalacioduquesasueca.jpg",
+        data-big="http://www.madridhistorico.com/imagenes/zoom_muy_grande/casapalacioduquesasueca.jpg"
+        data-title="Palacio de la Duquesa de Sueca"
+        data-description="<p>Plaza del Duque de Alba, 2</p><p>This historical building has been used for many different purposes over the years. During the eighteenth century it was used as a school for the children of the servants of Carlos III. In 1791 it was transformed into a noble residence. In the nineteenth century, it became the residence of the Duchess of Sweden, wife of Manuel Godoy, prime minister of Charles IV. Today the building is vacant and in horrible condition. The government aquired the building to put the office of Social Services of the municipality</p><p class='text-right' style='margin:0;'><small><a href='http://www.madridhistorico.com/seccion1_monumentos/index_monumentos.php?id=D&idcalle=2524&idinformacion=250&pag=2' target='_blank'>Source</a></small></p>"
+        >
+      </a>
+      <a href="gallery/photos/duquesa.jpg">
+        <img 
+        src="gallery/photos/duquesa.jpg",
+        data-big="gallery/photos/duquesa.jpg"
+        data-title="Palacio de la Duquesa de Sueca"
+       data-description="<p>Plaza del Duque de Alba, 2</p><p>This historical building has been used for many different purposes over the years. During the eighteenth century it was used as a school for the children of the servants of Carlos III. In 1791 it was transformed into a noble residence. In the nineteenth century, it became the residence of the Duchess of Sweden, wife of Manuel Godoy, prime minister of Charles IV. Today the building is vacant and in horrible condition. The government aquired the building to put the office of Social Services of the municipality</p><p class='text-right' style='margin:0;'><small><a href='http://www.madridhistorico.com/seccion1_monumentos/index_monumentos.php?id=D&idcalle=2524&idinformacion=250&pag=2' target='_blank'>Source</a>.  Photo Credit: Google Maps Streetview</small></p>"
+        >
+      </a>
+
+ <a href="gallery/photos/dosamigos.jpg">
+      <img 
+      src="gallery/photos/dosamigos.jpg",
+      data-big="gallery/photos/dosamigos.jpg"
+      data-title="Antig. C. Enseñanza Prof."
+      data-description="<p>Calle Dos Amigos 4.</p><p>According to a document from 2010 by the Governing Board of the City of Madrid, the building was authorized to create a Social Care Centre for the Elderly. Owned by the government, this building has the highest level of protection (Integral), but now it is vacant.</p><p class='text-right' style='margin:0;'><small>Photo Credit: Google Maps Streetview</small></p>">
+    </a>
+
+      <a href="http://www-2.madrid.es/urbanismo_inter/archivos/fotos/07/07217G12.jpg">
+      <img 
+      src="http://www-2.madrid.es/urbanismo_inter/archivos/fotos/07/07217G12.jpg",
+      data-big="http://www-2.madrid.es/urbanismo_inter/archivos/fotos/07/07217G12.jpg"
+      data-title="Antig. C. Enseñanza Prof."
+    data-description="<p>Calle Dos Amigos 4.</p><p>According to a document from 2010 by the Governing Board of the City of Madrid, the building was authorized to create a Social Care Centre for the Elderly. Owned by the government, this building has the highest level of protection (Integral), but now it is vacant.</p><p class='text-right' style='margin:0;'><small>Photo Credit: Ayuntamiento de Madrid</small></p>">
+    </a>
+
+  </a>
+
+<a href="gallery/photos/embajadores18.jpg">
+  <img 
+  src="gallery/photos/embajadores18.jpg",
+  data-big="gallery/photos/embajadores18.jpg"
+  data-title="Calle Embajadores 18"
+  data-description="<p>This building was a historic home and was built in the eighteenth century. It had a unique coat of arms above the main entrance. It had the third level of protection (Parcial) and was owned by the government. It was demolished earlier this year.</p><p class='text-right' style='margin:0;'><small>Photo Credit: Google Maps Streetview</small></p>">
+</a>
+
+  <a href="http://1.bp.blogspot.com/-Jw0wVKAn90o/UTCaGF8PuwI/AAAAAAAAKOA/zSBtL8OS3-M/s1600/escudo.JPG">
+  <img 
+  src="http://1.bp.blogspot.com/-Jw0wVKAn90o/UTCaGF8PuwI/AAAAAAAAKOA/zSBtL8OS3-M/s1600/escudo.JPG",
+  data-big="http://1.bp.blogspot.com/-Jw0wVKAn90o/UTCaGF8PuwI/AAAAAAAAKOA/zSBtL8OS3-M/s1600/escudo.JPG"
+  data-title="Calle Embajadores 18"
+  data-description="<p>This building was a historic home and was built in the eighteenth century. It had a unique coat of arms above the main entrance. It had the third level of protection (Parcial) and was owned by the government. It was demolished earlier this year.</p><p class='text-right' style='margin:0;'><small><a href='http://palomatorrijos.blogspot.com.es/2010/04/callejeando-entre-atocha-y-embajadores.html' target='_blank'>Photo Credit</a>.</small></p>">
+</a>
+
+<a href="gallery/photos/embajadores16.jpg">
+  <img 
+  src="gallery/photos/embajadores16.jpg",
+  data-big="gallery/photos/embajadores16.jpg"
+  data-title="Calle Embajadores 16"
+  data-description="<p>This seventeenth century property is a two-story building with a rear garden. According to the City Hall, it was build in 1656 and is proteced at the second level (Estructural).  It is a private residence and during its last ITE inspecion, the grade was <em>unfavorable</em> due to the general state of conservation of roofs and the general state of the plumbing and sanitation network.</p><p class='text-right' style='margin:0;'><small>Photo Credit: Google Maps Streetview</small></p>">
+</a>
+
+<a href="gallery/photos/barco39.jpg">
+  <img 
+  src="gallery/photos/barco39.jpg",
+  data-big="gallery/photos/barco39.jpg"
+  data-title="Calle Barco, 39"
+  data-description="<p>The building located here is a private and the year of construction is unknown.'residential' building and is protected at the second level by the government (Estructural)</p><p class='text-right' style='margin:0;'><small>Photo Credit: Google Maps Streetview</small></p>">
+</a>
+
+
+<a href="gallery/photos/Calle-Doctor-Letamendi-1.jpg">
+  <img 
+  src="gallery/photos/Calle-Doctor-Letamendi-1.jpg",
+  data-big="gallery/photos/Calle-Doctor-Letamendi-1.jpg"
+  data-title="Casa-Palacio Iván de Vargas"
+  data-description="<p>Calle Doctor Letamendi 1<p><p>Built in the sixteenth and seventeenth centuries, this building was purchased by the city in 1998 with the intention of making it the Fundación Nuevo Siglo. The building was protected at the highest level by the government (Singular). El Pais reported that the building was torn down without license in 2002.</p><p class='text-right' style='margin:0;'><small><a href='http://elpais.com/diario/2002/08/02/madrid/1028287463_850215.html' target='_blank'>Source</a>.  Photo Credit: Google Maps Streetview</small>">
+</a>
+
+
+<a href="gallery/photos/IMG_6160.jpg">
+  <img 
+  src="gallery/photos/IMG_6160.jpg",
+  data-big="gallery/photos/IMG_6160.jpg"
+  data-title="Cine Palacio de la Musica"
+  data-description="<p>Calle Gran Via 35</p><p>This theather was inaugurated in 1926 and is in a very prominant location of the Gran Via. The building was purchased by Caja Madrid (now Bankia Bank).  The original plan was to restore and rehibilitate the building, keeping the historical heritage. It is currently empty and the government has suspended construction.  It is currently protected under the highest level of protection (Integral).</p><p class='text-right' style='margin:0;'><small><a href='http://www.amiteatros.es/index.php?sc=9&pg=427' target='_blank'>Source</a></small>"
+  >
+</a>
+
+<a href="gallery/photos/IMG_6162.jpg">
+  <img 
+  src="gallery/photos/IMG_6162.jpg",
+  data-big="gallery/photos/IMG_6162.jpg"
+  data-title="Cine Palacio de la Musica"
+  data-description="<p>Calle Gran Via 35</p><p>This theather was inaugurated in 1926 and is in a very prominant location of the Gran Via. The building was purchased by Caja Madrid (now Bankia Bank).  The original plan was to restore and rehibilitate the building, keeping the historical heritage. It is currently empty and the government has suspended construction.  It is currently protected under the highest level of protection (Integral).</p><p class='text-right' style='margin:0;'><small><a href='http://www.amiteatros.es/index.php?sc=9&pg=427' target='_blank'>Source</a></small>"
+</a>
+
+<a href="gallery/photos/IMG_6164.jpg">
+  <img 
+  src="gallery/photos/IMG_6164.jpg",
+  data-big="gallery/photos/IMG_6164.jpg"
+  data-title="Calle Corredera Baja de San Pablo 20"
+  data-description="<p>This building was built in the seventeenth century and is said to have belonged to Don Andrés de Ayala Godoy.  There is a historical shield located above the main entrance that supposedly dates to between 1750 and 1765. This building was privately owned but was purchased by the City Hall to convert into a government building. It has the highest level of protection (Integral).  It is currently empty and in very bad condition.</p><p class='text-right' style='margin:0;'><small><a href='http://madridhaciaarriba.blogspot.com.es/2011/04/corredera-baja-de-san-pablo-20.html' target='_blank'>Source</a></small>"
+  >
+</a>
+
+<a href="gallery/photos/IMG_6170.jpg">
+  <img 
+  src="gallery/photos/IMG_6170.jpg",
+  data-big="gallery/photos/IMG_6170.jpg"
+  data-title="The Palace of the Princess Charlotte"
+  data-description="<p>This building was built in 1779 and was the house of Infanta Carlota. This building was <em>rehabilitated</em> but many of the historical heritage that existed in the interior disappeared.  The government stated that they would expropriate the building and restore it, but the work was never carried out. The building has the highest level of protection (Singular).</p><p class='text-right' style='margin:0;'><small><a href='http://caminandopormadrid.blogspot.com.es/2012/01/infanta-carlota-un-palacio-echado.html' target='_blank'>Source</a></small>"
+  >
+</a>
+
+
+
+<a href="gallery/photos/IMG_6146.jpg">
+  <img 
+  src="gallery/photos/IMG_6146.jpg",
+  data-big="gallery/photos/IMG_6146.jpg"
+  data-title="Consejería de Cultura"
+ data-description="<p>Also known as the Real Compañía Asturiana de Minas, this building was built in 1895 and has the highest level of protection (Singular). he building “suffered various alterations” in 1997 and was abandoned for some time until the government of Madrid took over, according to the City Hall. During its last inspection on November 30, 2012, the building was listed as “unfavorable” because of the general state of the structure and foundation, the general state of the facade, exterior and walls, and the state of the elements of existing access.</p><p class='text-right' style='margin:0;'><small><a href='http://monumentamadrid.es/AM_Edificios4/AM_Edificios4_WEB/index.htm#ingra:inmana.02455' target='_blank'>Source</a></small>"
+  
+  >
+</a>
+
+<a href="gallery/photos/IMG_6158.jpg">
+  <img 
+  src="gallery/photos/IMG_6158.jpg",
+  data-big="gallery/photos/IMG_6158.jpg"
+  data-title="Consejería de Cultura"
+  data-description="<p>Also known as the Real Compañía Asturiana de Minas, this building was built in 1895 and has the highest level of protection (Singular). he building “suffered various alterations” in 1997 and was abandoned for some time until the government of Madrid took over, according to the City Hall. During its last inspection on November 30, 2012, the building was listed as “unfavorable” because of the general state of the structure and foundation, the general state of the facade, exterior and walls, and the state of the elements of existing access.</p><p class='text-right' style='margin:0;'><small><a href='http://monumentamadrid.es/AM_Edificios4/AM_Edificios4_WEB/index.htm#ingra:inmana.02455' target='_blank'>Source</a></small>"
+  >
+</a>
+
+</div>
+</div>
+
+<p class="cred">Made by <a href="http://galleria.aino.se">Galleria</a>.</p>
+</div>
+<footer class="footer1">
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+<script>
+
+    // Load the classic theme
+    Galleria.loadTheme('gallery/galleria.classic.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+
+    </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+    !function ($) {
+      $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+    }(window.jQuery)
+    </script>
+    <script src="../assets/js/holder/holder.js"></script>
+  </body>
+  </html>

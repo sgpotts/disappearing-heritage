@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Sarah Garland Potts">
+
+  <link rel="stylesheet" href="lightbox/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lightbox/assets/css/bootstrap-lightbox.min.css">
+  <link rel="stylesheet" href="lightbox/assets/css/styles.css">
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+      /*color: #5a5a5a;*/
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 400px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      /* height: 100%;*/
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1{
+      margin: 0;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*color: #323232;*/
+      /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+      color:#323232;
+    }
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      font-weight:400;
+      /*color: #323232;*/
+      text-shadow: 0 1px 1px rgba(0,0,0,.4), 0 0 50px #ffffff;
+      /*text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff,0 0 50px #ffffff;*/
+      color:#161616;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+      font-family: 'Open Sans', Arial;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing:1px;
+      font-size:14px;
+      color:##FF6F36;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: 300;
+      text-align: left;
+    }
+    .marketing .span4 p {
+      text-align: left;
+      margin-left: 0px;
+      margin-right: 15px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        width: auto;
+        /* height: 500px;*/
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 60px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+
+    /* This rule is read by Galleria to define the gallery height: */
+    /*#galleria{height:320px}*/
+    
+    #container{  width: 100%;  top: 0;  left: 0; z-index: -1;   } 
+    #info{
+      top:0; left:0;z-index: -1;
+
+    }
+    /*h1,h2,h3,h4,h5,body{
+      color:black;
+      }*/
+      </style>
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- NAVBAR
+  ================================================== -->
+  <div class="navbar-wrapper"><!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner"><!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. --> <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="brand" href="home.html">Disappearing Heritage</a> <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="home.html">Home</a></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="map.html">Interactive Map</a></li>
+                  <li><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+                  <li><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+                  <li><a href="timeline.html">Timeline</a></li>
+                </ul>
+              </li>
+              <li><a href="feature.html">The Story</a></li>
+              <li class="active"><a href="plazaespana.html">The Empty Plaza</a></li>
+            <!--   <li><a href="#about">About</a></li> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid" style="padding-top:100px;">
+       <div class="span10 offset1">
+        <div class="page-header">
+         <h1>
+          Documentation <small>sources for the story</small>
+        </h1>
+      </div>
+    </div>
+    <div class="span9 offset1">
+      <div>
+        <p>
+         This project was created by <a href="http://sarahgarlandpotts.com" target="_blank">Sarah Garland Potts </a> for the Master in Digital Journalism at IE University in Madrid, Spain.  The website was created using Bootstrap.  Listed below are the links and documents used for the data for this project. For any comments or questions please email <a href="mailto:garlandpotts1@gmail.com">Sarah Garland Potts</a>.
+       </p>
+     </div>
+
+     <div>
+      <h2><small>General documentation for the project</small></h2>
+      <p>These are general sources used for the background of this project</p>
+      <ul class="unstyled">
+        <li>List of Bien de Interés Cultural from the Community of Madrid government website
+          <ul><li><a href="http://www.madrid.es/UnidadesDescentralizadas/Agla/ECLUS/BIENES%20INMUEBLES%20DE%20INTER%C3%89S%20CULTURAL%20EN%20LA%20COMUNIDAD%20DE%20MADRID.PDF" target="_blank">LINK HERE</a></li></ul></li><br>
+          <li>The Ley de Patrimonio Histórico of 1985 - <small>which established the basis of how the country maintains and preserves its cultural and historical heritage.</small>
+            <ul><li><a href="http://www.mcu.es/patrimonio/docs/ley16-1985.pdf" target="_blank">LINK HERE</a></li></ul></li><br>
+            <li>All references to "inspections" were completed by the ITE from the City Hall.
+              <ul><li><a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Ayuntamiento/Urbanismo-e-Infraestructuras/Tramites-y-gestiones-ITE?vgnextfmt=default&vgnextoid=738f4f6db519a110VgnVCM1000000b205a0aRCRD&vgnextchannel=8dba171c30036010VgnVCM100000dc0ca8c0RCRD" target="_blank">WEBSITE LINK HERE</a></li></ul></li><br>
+
+            </ul>
+          </div>
+
+ <div>
+      <h2><small>Examples of documents from the City Hall</small></h2>
+      <p>These documents were collected from the map below from the Madrid City Hall</p>
+    </div>
+
+
+          <!-- -->
+
+          <ul class="thumbnails">
+           <li class="span2">
+            <a data-toggle="lightbox" href="#demoLightbox1" class="thumbnail">
+             <img src="img/CasaDuqesa.jpg" alt="Click to view the lightbox">
+           </a>
+           <div id="demoLightbox1" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+             <div class='lightbox-content'>
+              <img src="img/CasaDuqesa.jpg">
+              <!-- <div class="lightbox-caption"><p>Your caption here</p></div> -->
+            </div>
+          </div>
+        </li>
+        <li class="span2">
+          <a data-toggle="lightbox" href="#demoLightbox2" class="thumbnail">
+           <img src="img/CorrederaBajadeSanPablo.jpg" alt="Click to view the lightbox">
+         </a>
+         <div id="demoLightbox2" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+           <div class='lightbox-content'>
+            <img src="img/CorrederaBajadeSanPablo.jpg">
+         <!--    <div class="lightbox-caption"><p>Your caption here</p></div> -->
+          </div>
+        </div>
+      </li>
+      <li class="span2">
+        <a data-toggle="lightbox" href="#demoLightbox3" class="thumbnail">
+         <img src="img/embajadores18.jpg" alt="Click to view the lightbox">
+       </a>
+       <div id="demoLightbox3" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+         <div class='lightbox-content'>
+          <img src="img/embajadores18.jpg">
+          <!-- <div class="lightbox-caption"><p>Your caption here</p></div> -->
+        </div>
+      </div>
+    </li>
+    <li class="span2">
+      <a data-toggle="lightbox" href="#demoLightbox4" class="thumbnail">
+       <img src="img/CalleLuna.jpg" alt="Click to view the lightbox">
+     </a>
+     <div id="demoLightbox4" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+       <div class='lightbox-content'>
+        <img src="img/CalleLuna.jpg">
+       <!--  <div class="lightbox-caption"><p>Your caption here</p></div> -->
+      </div>
+    </div>
+  </li>
+  <li class="span2">
+    <a data-toggle="lightbox" href="#demoLightbox5" class="thumbnail">
+     <img src="img/antoniogrilo.jpg" alt="Click to view the lightbox">
+   </a>
+   <div id="demoLightbox5" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+     <div class='lightbox-content'>
+      <img src="img/antoniogrilo.jpg">
+      <!-- <div class="lightbox-caption"><p>Your caption here</p></div> -->
+    </div>
+  </div>
+</li>
+
+
+</ul>
+
+</div>
+<div class="span10 offset1"><h2><small>Interactive Government Map</small></h2><p><a href="http://www-2.munimadrid.es/urbanismo_inter/visualizador/" target="_blank"> Sistema de Información Geográfica de Urbanismo - City Hall Government of Madrid </a></p><p>This map provides information about every building in Madrid, their status of protection, documentation of work permits, etc</p></div>
+<div class="span12">
+  <div>
+    <iframe src="http://www-2.munimadrid.es/urbanismo_inter/visualizador/" width="90%" height="600" align="middle" style="height:600px;" ></iframe>
+  </div>
+  <!-- -->
+
+  <!-- -->
+</div>
+</div>
+
+
+<script src="lightbox/assets/js/jquery.min.js"></script>
+<script src="lightbox/assets/js/scale.fix.js"></script>
+
+<script src="lightbox/assets/js/bootstrap.min.js"></script>
+<script src="lightbox/assets/js/bootstrap-lightbox.min.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25371379-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

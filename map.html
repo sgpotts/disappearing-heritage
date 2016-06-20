@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700' rel='stylesheet' type='text/css'>
+ <meta charset="utf-8">
+ <!--Edit the title of the page-->
+ <title>Disappearing Heritage &middot; Sarah Garland Potts</title>
+ <meta name="description" content="">
+ <meta name="author" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v2/themes/css/cartodb.ie.css" />
+      <![endif]-->
+      <!--Switch between the different themes changing the stylesheet below - light-theme.css |dark-theme.css -->
+
+      <link rel="stylesheet" href="sidepanel/css/bootstrap.min.css" media="screen">
+      <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+      <link rel="stylesheet" href="sidepanel/css/light-theme.css">
+      <link rel="stylesheet" href="sidepanel/css/makeitresponsive.css">
+      
+
+      <link href="css/bootstrap-responsive.css" rel="stylesheet">
+      <script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
+      <script src="http://libs.cartocdn.com/cartodb.js/v2/cartodb.js"></script>
+      <style>
+      body {
+        padding-bottom: 40px;
+        color: #5a5a5a;
+
+      }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: 600;
+      font-family:'Open Sans', 'Tahoma';
+      letter-spacing:1px;
+      text-transform: uppercase;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+      font-family:'Open Sans', 'Tahoma';
+      text-transform:uppercase;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      body {
+        margin: 0; 
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+        font-size: 14px; 
+        line-height: 20px; 
+        color: #333333; 
+        background-color: #ffffff; 
+        margin: 0;
+      }
+      h1{
+        font-family: "Open Sans","Helvetica Neue"; 
+        font-weight: 300; 
+        font-size: 40px; 
+        letter-spacing: -1px; 
+        color: #333; 
+        line-height: 33px;
+      }
+      h3{font-family: "Open Sans","Helvetica Neue"; 
+      font-weight: 300; 
+      font-size: 25px; 
+      color: #CCC; 
+      text-transform: uppercase; 
+      margin: 10px 0 0 0;
+    }
+      p{
+        margin: 8px 0 20px 0; 
+        line-height: 18px;
+      }
+      a, a:visited{
+        color: #397DB8; 
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+
+    }
+    html, body {padding: 0; margin: 0;}
+   
+    div.cartodb-popup h4 {
+      font-family:'Open Sans', Helvetica, Arial;
+      font-weight:100;
+      font-size:12px;
+      letter-spacing:1px;
+    }
+
+    </style>
+    <script>
+    var map;
+    function init(){
+    // initiate leaflet map
+    map = new L.Map('cartodb-map', { 
+      center: [40.42, -3.70],
+      zoom: 14
+    })
+
+    L.tileLayer('http://a.tiles.mapbox.com/v3/gpotts.map-jgz8mu64/{z}/{x}/{y}.png', {
+      attribution: 'Mapbox <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    }).addTo(map);
+
+    var layerUrl = 'http://garlandpotts1.cartodb.com/api/v1/viz/sites/viz.json';
+
+    var layerOptions = {
+      query: "SELECT * FROM {{table_name}}",
+      tile_style: "#{{table_name}}{marker-fill: #FF4600; marker-width: 9; marker-line-color: white; marker-line-width: .5;} "
+    }
+
+    cartodb.createLayer(map, layerUrl, layerOptions)
+    .on('done', function(layer) {
+      map.addLayer(layer);
+    }).on('error', function() {
+      //log the error
+    });
+  }
+  </script>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+      <![endif]-->
+
+      <!-- Fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+      <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    </head>
+    <body onload="init()">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <div class="map" id="cartodb-map"></div>
+          </div>
+        </div>
+      </div>
+
+<!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="home.html">Disappearing Heritage</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="active"><a href="map.html">Interactive Map</a></li>
+                     <li><a href="gallery1.html">Slideshow &middot; Well preserved buildings</a></li>
+                      <li ><a href="gallery2.html">Slideshow &middot; Buildings in danger</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>  
+                  </ul>
+                </li>  
+                <li><a href="feature.html">The Story</a></li>
+                <li><a href="plazaespana.html">The Empty Plaza</a></li>              
+                <li><a href="#about">About</a></li>
+              
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+  <div class="sidepanel">
+    <div class="wrapper">
+
+      <h1 style="line-height:1.2; font-size:35px; letter-spacing:1px;">Protecting History</h1>
+      <p>Marked on the map are all of the locations declared "Bien de Interes Cultural" in the city of Madrid.  These locations are protected under the highest level from the government of the Communidad de Madrid.  These are considered relevant elements in the history of art and architecture in Spain, or are they constitute a "milestone in the urban fabric" of the city. <a href='http://www.madrid.es/UnidadesDescentralizadas/Agla/ECLUS/BIENES%20INMUEBLES%20DE%20INTER%C3%89S%20CULTURAL%20EN%20LA%20COMUNIDAD%20DE%20MADRID.PDF'>Official list here</a> </p>
+
+      <!--Copy and paste the div below for creating content blocks-->
+      <h3 style=" line-height:1;">Locations</h3>
+      <p>There are over 200 locations in the city of Madrid that are listed as BIC. In addition to these locations, there are over 9,000 other properites around the city, with different levels of protection. BIC gaurentees the highest level, meaning that their architectural characteristics, construction, volumes, forms and decorative elements should be maintained.</p>
+
+      <h3 style=" line-height:1;">Sources</h3>
+      <p>Government of Spain <a href='http://www.madrid.es/UnidadesDescentralizadas/Agla/ECLUS/BIENES%20INMUEBLES%20DE%20INTER%C3%89S%20CULTURAL%20EN%20LA%20COMUNIDAD%20DE%20MADRID.PDF'>Official list</a> 
+      <br>  Levels of Protection from the Spanish Government (In Spanish) <a href='http://www.mcu.es/patrimonio/CE/BienCulturales/NivProtec/Introduccion.html'>here</a> </p>
+
+      <div class="context footer">
+        <p style="font-size:10px;">Create your maps with ease using <a href="http://cartodb.com">CartoDB</a></p></p>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <footer class="footer1">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+    <!--Change the URL below in order to change the map that is being shown.
+    Go to your map in CartoDB, click on share, and copy the URL undert the API section
+    Check the cartodb.js documentation for more info
+    http://developers.cartodb.com/documentation/cartodb-js.html-->
+    <script type="text/javascript">
+    cartodb.createVis('map', 'http://examples.cartodb.com/api/v1/viz/15590/viz.json');
+    </script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script>
+    !function ($) {
+      $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+    }(window.jQuery)
+    </script>
+    <script src="../assets/js/holder/holder.js"></script>
+  </body>
+  </html>
