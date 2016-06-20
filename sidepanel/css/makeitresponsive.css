@@ -1,0 +1,12 @@
+/* Here are the styles that makes the template responsive */
+
+@media only screen and (max-width: 768px) {
+  .map{position: inherit; height: 400px; width: 100%; display: block;}
+  .sidepanel{position: inherit; width: 100%;}
+ h1{padding-top:0px; font-family: "Open Sans","Helvetica Neue"; font-weight: 300; font-size: 40px; letter-spacing: -1px; color: #333; line-height: 33px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+  .map {height: 300px;}
+}
